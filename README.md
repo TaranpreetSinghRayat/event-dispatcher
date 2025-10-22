@@ -305,6 +305,22 @@ return [
 
 ## Examples
 
+### Quick Start
+
+Run the interactive example runner:
+
+```bash
+php run-examples.php
+```
+
+Or run individual examples directly:
+
+```bash
+php examples/core-php/basic-usage.php
+php examples/core-php/listener-classes.php
+php examples/core-php/subscriber-example.php
+```
+
 Check the `examples` directory for more detailed examples:
 
 - **Core PHP Examples:**
