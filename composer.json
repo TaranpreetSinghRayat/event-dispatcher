@@ -1,0 +1,45 @@
+{
+    "name": "tweekersnut/event-dispatcher",
+    "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them. Supports both Laravel and core PHP.",
+    "type": "library",
+    "keywords": ["event", "dispatcher", "event-dispatcher", "laravel", "php", "listener", "subscriber"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tweekersnut Network",
+            "email": "admin@tweekersnut.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0|^10.0"
+    },
+    "suggest": {
+        "illuminate/support": "Required for Laravel integration (^8.0|^9.0|^10.0|^11.0)"
+    },
+    "autoload": {
+        "psr-4": {
+            "EventDispatcher\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EventDispatcher\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EventDispatcher\\Laravel\\EventDispatcherServiceProvider"
+            ],
+            "aliases": {
+                "EventDispatcher": "EventDispatcher\\Laravel\\Facades\\EventDispatcher"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
+

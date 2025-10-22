@@ -1,0 +1,30 @@
+# Dependencies
+/vendor/
+
+# Composer
+composer.lock
+composer.phar
+
+# PHPUnit
+.phpunit.result.cache
+phpunit.xml
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build files
+/build/
+/dist/
+
+# Coverage
+/coverage/
+clover.xml
+
