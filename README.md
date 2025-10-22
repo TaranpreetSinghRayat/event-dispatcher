@@ -17,10 +17,50 @@ A flexible and powerful event dispatcher package for PHP that allows your applic
 
 ## Installation
 
+### For Laravel Projects
+
 Install the package via Composer:
 
 ```bash
 composer require tweekersnut/event-dispatcher
+```
+
+The service provider will be automatically registered via Laravel's package discovery.
+
+### For Core PHP Projects
+
+1. Install the package via Composer:
+
+```bash
+composer require tweekersnut/event-dispatcher
+```
+
+2. Include the Composer autoloader in your project:
+
+```php
+require_once __DIR__ . '/vendor/autoload.php';
+```
+
+### For Development/Testing
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/TaranpreetSinghRayat/event-dispatcher.git
+cd event-dispatcher
+composer install
+```
+
+Run the examples:
+
+```bash
+php examples/core-php/basic-usage.php
+```
+
+Or use the interactive example runner:
+
+```bash
+php run-examples.php
 ```
 
 ## Quick Start
@@ -60,6 +100,58 @@ EventDispatcher::listen('user.created', function ($event) {
 // Dispatch an event
 $event = new Event('user.created', ['name' => 'John Doe']);
 EventDispatcher::dispatch($event);
+```
+
+## Getting Started
+
+### Step 1: Installation
+
+**For Laravel:**
+```bash
+composer require tweekersnut/event-dispatcher
+```
+
+**For Core PHP:**
+```bash
+composer require tweekersnut/event-dispatcher
+```
+
+### Step 2: Try the Examples
+
+After installation, you can run the included examples to see the package in action:
+
+```bash
+# Run basic usage example
+php vendor/tweekersnut/event-dispatcher/examples/core-php/basic-usage.php
+
+# Or if you cloned the repository
+php examples/core-php/basic-usage.php
+```
+
+### Step 3: Start Using in Your Project
+
+**Core PHP:**
+```php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+use EventDispatcher\EventDispatcher;
+use EventDispatcher\Event;
+
+$dispatcher = new EventDispatcher();
+
+// Your event handling code here
+```
+
+**Laravel:**
+```php
+<?php
+use EventDispatcher\Laravel\Facades\EventDispatcher;
+
+// Use the facade anywhere in your Laravel app
+EventDispatcher::listen('event.name', function($event) {
+    // Handle event
+});
 ```
 
 ## Usage
